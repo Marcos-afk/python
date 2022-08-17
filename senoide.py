@@ -3,15 +3,12 @@
 from pylab import *
 import matplotlib.pyplot as plt
 
-fs = 44100
-ts = 1 / fs
-f0 = 440
-
-n = np.arange(44100)
-xn = np.cos(2 * np.pi * n * f0 * ts)
+a = 1
+f = 0.001
 
 
-fig = plt.figure(figsize=(5, 5))
-ax = plt.axes(projection=None)
-ax.scatter(n[0:200]*ts, xn[0:200])
+n = np.arange(0, a, f)
+xn = np.sin(n/0.03)
+
+plt.stem(n, xn)
 plt.show()
